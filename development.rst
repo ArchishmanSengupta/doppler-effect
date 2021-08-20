@@ -35,5 +35,5 @@ SPOTIFY WEB API Node helps us to convert the AUTH_URL into an accessible
 SERVER 
 #############
 
-We need to access the client_secret in order to logon the user. For that we need to run it in a server
+We need to access the client_secret in order to login the user. For that we need to run it in a server
 
