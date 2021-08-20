@@ -29,3 +29,11 @@ See Spotify's Authorization guide for detailed information on these flows.
 SPOTIFY WEB API Node helps us to convert the AUTH_URL into an accessible 
 #. access_token 
 #. refresh_token
+
+
+#############
+SERVER 
+#############
+
+We need to access the client_secret in order to logon the user. For that we need to run it in a server
+
