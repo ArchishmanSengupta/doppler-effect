@@ -7,6 +7,7 @@ const SpotifyWebApi= require('spotify-web-api-node');
 const app = express();
 app.use(cors());
 app.use(bodyParser.json()); // for parsing the body
+
 app.post('/login',(req,res)=>{
     // The code that's returned as a query parameter to the redirect URI
     const code=req.body.code;
