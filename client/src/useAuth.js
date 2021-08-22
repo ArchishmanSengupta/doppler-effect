@@ -20,8 +20,12 @@ export default function useAuth(code) {
         code,
         }).then(res=>{
             console.log(res.data);
-        });
+        }).catch(()=>{
+            window.location='/'
+        })
     }, [code]);
+
+    // 19:40 mins resume
 
 }
 
