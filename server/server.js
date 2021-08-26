@@ -8,6 +8,29 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json()); // for parsing the body
 
+// Routing after refreshToken is changed
+app.post('/refresh',(res,req)=>{
+const refreshToken =req.body.refreshToken
+const spotifyApi = new SpotifyWebApi({
+    redirectUri: process.env.REDIRECT_URI,
+    clientID: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
+    refreshToken
+})
+
+spotifyApi.refreshAccessToken()
+        .then(data => {
+            res.json({
+                accessToken: data.body.accessToken,
+                expiresIn: data.body.expiresIn,
+  })
+}) .catch(err => {
+    console.log(err)
+    res.sendStatus(400)
+})
+})
+
+
 app.post('/login',(req,res)=>{
     // The code that's returned as a query parameter to the redirect URI
     const code=req.body.code;

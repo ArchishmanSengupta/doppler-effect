@@ -29,8 +29,13 @@ export default function useAuth(code) {
         })
     }, [code]);
 
-    // 19:40 mins resume
-    // this access calling all spotify apis at once
+    //  auto Refresh accessToken
+    useEffect(()=>{
+
+    },[refreshToken,expiresIn]
+    );
+   
+    // this accessToken is  calling all spotify apis at once
 return accessToken;
 }
 
